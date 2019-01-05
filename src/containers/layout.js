@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleAddFigure: (figureType, coordinates) => dispatch(addFigure(figureType, coordinates))
+        handleAddFigure: (figureType, coordinates, boardId) => 
+                                dispatch(addFigure(figureType, coordinates, boardId))
     };
 }
 
