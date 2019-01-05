@@ -8,18 +8,23 @@ const LeftPanel = (props) => {
         layout.classList.toggle('active');
     }
 
+    function handleDragStart(e, figureType) {
+        handleDrag();
+        e.dataTransfer.setData('text/plain', figureType);
+    }
+
     return (
         <div className="left-panel">
             <div 
                 className="figure-example circle"
                 draggable="true"
-                onDragStart={handleDrag}
+                onDragStart={(e) => handleDragStart(e, 'circle')}
                 onDragEnd={handleDrag}
             ></div>
             <div 
                 className="figure-example"
                 draggable="true"
-                onDragStart={handleDrag}
+                onDragStart={(e) => handleDragStart(e, 'rect')}
                 onDragEnd={handleDrag}
             ></div>
         </div>

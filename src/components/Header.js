@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <>
             <header className="clearfix">
-                <h1 className="left">{'Board'}</h1>
+                <h1 className="left" id="board-name">{'Board'}</h1>
                 <div className="board-navigation right">
                     <Link to="/board/1">Board 1</Link>
                     <Link to="/board/2">Board 2</Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-import Layout from '../components/Layout';
+import Layout from '../containers/layout';
 import Header from '../components/Header';
 import LeftPanel from '../components/LeftPanel';
 
