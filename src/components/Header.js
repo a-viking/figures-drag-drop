@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Header = (props) => {
+    const boardNum = window.location.pathname.split('/')[2];
     return (
         <>
-            <header className="clearfix">
-                <h1 className="left" id="board-name">{'Board'}</h1>
-                <div className="board-navigation right">
-                    <Link to="/board/1">Board 1</Link>
-                    <Link to="/board/2">Board 2</Link>
-                    <Link to="/board/3">Board 3</Link>
-                    <Link to="/board/4">Board 4</Link>
+            <header>
+                <h1 id="board-name">{`Board ${boardNum}`}</h1>
+                <div className="board-navigation">
+                    <NavLink to='/board/1' className='nav-link' activeClassName='active'>Board 1</NavLink>
+                    <NavLink to='/board/2' className='nav-link' activeClassName='active'>Board 2</NavLink>
+                    <NavLink to='/board/3' className='nav-link' activeClassName='active'>Board 3</NavLink>
+                    <NavLink to='/board/4' className='nav-link' activeClassName='active'>Board 4</NavLink>
                 </div>
             </header>
             <div className="content-wrapper">

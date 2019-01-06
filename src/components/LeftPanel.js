@@ -26,6 +26,12 @@ const LeftPanel = (props) => {
                 onDragStart={(e) => handleDragStart(e, 'rect')}
                 onDragEnd={handleDrag}
             ></div>
+            <div 
+                className="figure-example triangle"
+                draggable="true"
+                onDragStart={(e) => handleDragStart(e, 'triangle')}
+                onDragEnd={handleDrag}
+            ></div>
         </div>
     );
 }

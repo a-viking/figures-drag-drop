@@ -6,6 +6,7 @@ const Figure = ({type, x, y, savePosition, id}) => {
 
     function handleMouseDown(e) {
         const figure = e.target;
+        figure.classList.toggle('moving');
         moveAt(e);
 
         function moveAt(e) {
@@ -23,6 +24,7 @@ const Figure = ({type, x, y, savePosition, id}) => {
 
         e.target.onmouseup = () => {
             savePosition(id, parseInt(figure.style.left), parseInt(figure.style.top));
+            figure.classList.toggle('moving');
             document.onmousemove = null;
         }
     }
