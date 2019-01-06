@@ -17,7 +17,7 @@ const Layout = (props) => {
     const figures = [];
     props.layout.map((figure) => {
         if (figure.boardId === boardId) {
-            figures.push(<Figure key={'fig_' + figure.id} {...figure}/>);
+            figures.push(<Figure key={'fig_' + figure.id} {...figure} savePosition={props.saveFigurePosition}/>);
         }
     });
 

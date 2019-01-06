@@ -12,6 +12,11 @@ const layout = (state = [], action) => {
                 }
             ];
         
+        case 'FIGURE_SAVE_POSITION':
+            return state.map(figure => {
+                return figure.id === action.figureId ? {...figure, x: action.x, y: action.y} : figure;
+            });
+        
         default:
             return state;
     }

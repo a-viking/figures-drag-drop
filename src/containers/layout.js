@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import LayoutComponent from '../components/Layout';
-import {addFigure} from '../actions';
+import {addFigure, saveFigurePosition} from '../actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleAddFigure: (figureType, coordinates, boardId) => 
-                                dispatch(addFigure(figureType, coordinates, boardId))
+                                dispatch(addFigure(figureType, coordinates, boardId)),
+        saveFigurePosition: (figureId, x, y) => dispatch(saveFigurePosition(figureId, x, y))
     };
 }
 

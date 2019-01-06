@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 const Header = (props) => {
-    console.log('render header');
     return (
         <>
             <header className="clearfix">
