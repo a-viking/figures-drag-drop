@@ -1,5 +1,6 @@
 import React from 'react';
 import Figure from './Figure';
+import PropTypes from 'prop-types';
 
 const Layout = (props) => {
     const {boardId} = props.match.params;
@@ -14,11 +15,8 @@ const Layout = (props) => {
         e.dataTransfer.clearData();
     }
 
-    const figures = [];
-    props.layout.map((figure) => {
-        if (figure.boardId === boardId) {
-            figures.push(<Figure key={'fig_' + figure.id} {...figure} savePosition={props.saveFigurePosition}/>);
-        }
+    const figures = props.layout.filter(fig => fig.boardId === boardId).map(figure => {
+        return <Figure key={'fig_' + figure.id} {...figure} savePosition={props.saveFigurePosition}/>;
     });
 
     return (
@@ -27,5 +25,12 @@ const Layout = (props) => {
         </div>
     );
 }
+
+Layout.propTypes = {
+    match: PropTypes.any,
+    handleAddFigure: PropTypes.func,
+    saveFigurePosition: PropTypes.func,
+    layout: PropTypes.array,
+};
 
 export default Layout;

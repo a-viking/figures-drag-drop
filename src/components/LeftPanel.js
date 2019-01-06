@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const LeftPanel = (props) => {
+const LeftPanel = () => {
     function handleDrag(e) {
         const layout = document.querySelector('.layout');
         layout.classList.toggle('active');

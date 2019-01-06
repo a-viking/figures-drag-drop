@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Figure = ({type, x, y, savePosition, id}) => {
     const cls = type === 'rect' ? '' : type;
@@ -38,5 +39,13 @@ const Figure = ({type, x, y, savePosition, id}) => {
         ></div>
     );
 }
+
+Figure.propTypes = {
+    savePosition: PropTypes.func,
+    type: PropTypes.string,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    id: PropTypes.number
+};
 
 export default Figure;
